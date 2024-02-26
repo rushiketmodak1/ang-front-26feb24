@@ -1,0 +1,24 @@
+<p>course-dialog works!</p>
+<h2 mat-dialog-title>Add Course</h2>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="data.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="imagePath">Image Path</label>
+      <input type="text" class="form-control" id="imagePath" [(ngModel)]="data.imagePath" name="imagePath">
+      <!-- Display image below -->
+      <img [src]="data.imagePath" alt="Course Image" *ngIf="data.imagePath" style="max-width: 100%; margin-top: 10px;">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" [(ngModel)]="data.description" name="description"></textarea>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

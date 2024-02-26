@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Apps</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
+          </li> -->
+          <li class="nav-item">
+            <button class="btn btn-outline-success" type="button" (click)="openAddCourseDialog()">Add Courses</button>
+          </li>
+        </ul>
+        <button class="btn btn-primary" type="button" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+
+  
+  
+  
+  
+  
+  
+  <div *ngFor="let data of submittedData">
+    <div>
+      <table class="submitted-table">
+        <tr>
+          <td>{{ data.name }}</td>
+          <td rowspan="3"><img [src]="data.imagePath" alt="Image" class="submitted-image"></td>
+          <td rowspan="3">{{ data.description }}</td>
+          <td rowspan="3">
+            <button (click)="openAddCourseDialog(data)">Edit</button>
+            <button (click)="deleteCourse(data.id)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
